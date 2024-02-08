@@ -1,14 +1,15 @@
 import chalk from "chalk"
 import console from "console"
 import { renameSync } from "fs"
-import {
+import fs from "fs-extra"
+const {
   copySync,
   existsSync,
   mkdirpSync,
   mkdirSync,
   realpathSync,
   writeFileSync,
-} from "fs-extra"
+} = fs
 import { sync as rimraf } from "rimraf"
 import { dirSync } from "tmp"
 import { gzipSync } from "zlib"

@@ -1,6 +1,6 @@
 import chalk from "chalk"
 import { writeFileSync } from "fs"
-import { existsSync } from "fs-extra"
+import fs from "fs-extra"
 import { posix } from "path"
 import semver from "semver"
 import { hashFile } from "./hash.js"
@@ -39,7 +39,7 @@ function getInstalledPackageVersion({
   patchFilename: string
 }): null | string {
   const packageDir = join(appPath, path)
-  if (!existsSync(packageDir)) {
+  if (!fs.existsSync(packageDir)) {
     if (process.env.NODE_ENV === "production" && isDevOnly) {
       return null
     }

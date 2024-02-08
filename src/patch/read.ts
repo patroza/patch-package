@@ -1,5 +1,5 @@
 import chalk from "chalk"
-import { readFileSync } from "fs-extra"
+import fs from "fs-extra"
 import { relative, resolve } from "../path.js"
 import { normalize } from "path"
 import { PackageDetails } from "../PackageDetails.js"
@@ -15,7 +15,7 @@ export function readPatch({
   patchDir: string
 }): PatchFilePart[] {
   try {
-    return parsePatchFile(readFileSync(patchFilePath).toString())
+    return parsePatchFile(fs.readFileSync(patchFilePath).toString())
   } catch (e) {
     const fixupSteps: string[] = []
     const relativePatchFilePath = normalize(

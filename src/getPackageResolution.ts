@@ -1,7 +1,7 @@
 import { join, resolve } from "./path.js"
 import { PackageDetails, getPatchDetailsFromCliString } from "./PackageDetails.js"
 import { PackageManager, detectPackageManager } from "./detectPackageManager.js"
-import { readFileSync, existsSync } from "fs-extra"
+import fs from "fs-extra"
 import { parse as parseYarnLockFile } from "@yarnpkg/lockfile"
 import yaml from "yaml"
 import findWorkspaceRoot from "find-yarn-workspace-root"
@@ -22,19 +22,19 @@ export function getPackageResolution({
     const isBun = packageManager === "bun"
     const lockFileName = isBun ? "bun.lockb" : "yarn.lock"
     let lockFilePath = lockFileName
-    if (!existsSync(lockFilePath)) {
+    if (!fs.existsSync(lockFilePath)) {
       const workspaceRoot = findWorkspaceRoot()
       if (!workspaceRoot) {
         throw new Error(`Can't find ${lockFileName} file`)
       }
       lockFilePath = join(workspaceRoot, lockFilePath)
     }
-    if (!existsSync(lockFilePath)) {
+    if (!fs.existsSync(lockFilePath)) {
       throw new Error(`Can't find ${lockFileName} file`)
     }
     const lockFileString = isBun
       ? parseBunLockfile(lockFilePath)
-      : readFileSync(lockFilePath).toString()
+      : fs.readFileSync(lockFilePath).toString()
     let appLockFile
     if (lockFileString.includes("yarn lockfile v1")) {
       const parsedYarnLockFile = parseYarnLockFile(lockFileString)
