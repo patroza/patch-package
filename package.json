@@ -21,11 +21,6 @@
     "prepack": "rimraf dist/**/*.test.js",
     "test": "./run-tests.sh --runInBand"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsc --noEmit && lint-staged"
-    }
-  },
   "lint-staged": {
     "*.ts": [
       "tslint -c tslint.json -p tsconfig.json",

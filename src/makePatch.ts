@@ -10,7 +10,7 @@ const {
   realpathSync,
   writeFileSync,
 } = fs
-import { sync as rimraf } from "rimraf"
+import rimraf from "rimraf"
 import { dirSync } from "tmp"
 import { gzipSync } from "zlib"
 import { applyPatch } from "./applyPatches.js"
@@ -255,11 +255,11 @@ export function makePatch({
       })
 
     // remove nested node_modules just to be safe
-    rimraf(join(tmpRepoPackagePath, "node_modules"))
+    rimraf.sync(join(tmpRepoPackagePath, "node_modules"))
     // remove .git just to be safe
-    rimraf(join(tmpRepoPackagePath, ".git"))
+    rimraf.sync(join(tmpRepoPackagePath, ".git"))
     // remove patch-package state file
-    rimraf(join(tmpRepoPackagePath, STATE_FILE_NAME))
+    rimraf.sync(join(tmpRepoPackagePath, STATE_FILE_NAME))
 
     // commit the package
     console.info(chalk.grey("•"), "Diffing your files with clean files")
@@ -293,17 +293,17 @@ export function makePatch({
     git("commit", "--allow-empty", "-m", "init")
 
     // replace package with user's version
-    rimraf(tmpRepoPackagePath)
+    rimraf.sync(tmpRepoPackagePath)
 
     // pnpm installs packages as symlinks, copySync would copy only the symlink
     copySync(realpathSync(packagePath), tmpRepoPackagePath)
 
     // remove nested node_modules just to be safe
-    rimraf(join(tmpRepoPackagePath, "node_modules"))
+    rimraf.sync(join(tmpRepoPackagePath, "node_modules"))
     // remove .git just to be safe
-    rimraf(join(tmpRepoPackagePath, ".git"))
+    rimraf.sync(join(tmpRepoPackagePath, ".git"))
     // remove patch-package state file
-    rimraf(join(tmpRepoPackagePath, STATE_FILE_NAME))
+    rimraf.sync(join(tmpRepoPackagePath, STATE_FILE_NAME))
 
     // also remove ignored files like before
     removeIgnoredFiles(tmpRepoPackagePath, includePaths, excludePaths)
