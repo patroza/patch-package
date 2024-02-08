@@ -13,5 +13,5 @@ interface Item {
 
 declare module "klaw-sync" {
   const klawSync: (dir: string, opts?: Options, ls?: Item[]) => Item[]
-  export = klawSync
+  export default klawSync
 }

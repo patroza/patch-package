@@ -2,16 +2,16 @@ import chalk from "chalk"
 import process from "process"
 import minimist from "minimist"
 
-import { applyPatchesForApp } from "./applyPatches"
-import { getAppRootPath } from "./getAppRootPath"
-import { makePatch } from "./makePatch"
-import { makeRegExp } from "./makeRegExp"
-import { detectPackageManager } from "./detectPackageManager"
-import { join } from "./path"
+import { applyPatchesForApp } from "./applyPatches.js"
+import { getAppRootPath } from "./getAppRootPath.js"
+import { makePatch } from "./makePatch.js"
+import { makeRegExp } from "./makeRegExp.js"
+import { detectPackageManager } from "./detectPackageManager.js"
+import { join } from "./path.js"
 import { normalize, sep } from "path"
 import slash from "slash"
 import { isCI } from "ci-info"
-import { rebase } from "./rebase"
+import { rebase } from "./rebase.js"
 
 const appPath = getAppRootPath()
 const argv = minimist(process.argv.slice(2), {

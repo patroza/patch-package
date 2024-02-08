@@ -1,4 +1,4 @@
-import { join } from "./path"
+import { join } from "./path.js"
 import { removeSync } from "fs-extra"
 import klawSync from "klaw-sync"
 

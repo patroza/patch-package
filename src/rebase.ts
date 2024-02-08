@@ -1,14 +1,14 @@
 import chalk from "chalk"
 import { join, resolve } from "path"
-import { applyPatch } from "./applyPatches"
-import { hashFile } from "./hash"
-import { PatchedPackageDetails } from "./PackageDetails"
-import { getGroupedPatches } from "./patchFs"
+import { applyPatch } from "./applyPatches.js"
+import { hashFile } from "./hash.js"
+import { PatchedPackageDetails } from "./PackageDetails.js"
+import { getGroupedPatches } from "./patchFs.js"
 import {
   getPatchApplicationState,
   savePatchApplicationState,
   verifyAppliedPatches,
-} from "./stateFile"
+} from "./stateFile.js"
 
 export function rebase({
   appPath,

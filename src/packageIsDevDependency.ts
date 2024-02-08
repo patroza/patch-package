@@ -1,5 +1,5 @@
-import { PatchedPackageDetails } from "./PackageDetails"
-import { join } from "./path"
+import { PatchedPackageDetails } from "./PackageDetails.js"
+import { join } from "./path.js"
 import { existsSync } from "fs"
 
 export function packageIsDevDependency({

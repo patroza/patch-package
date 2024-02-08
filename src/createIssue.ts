@@ -1,9 +1,9 @@
 import chalk from "chalk"
 import open from "open"
 import { stringify } from "querystring"
-import { PackageManager } from "./detectPackageManager"
-import { PackageDetails } from "./PackageDetails"
-import { join, resolve } from "./path"
+import { PackageManager } from "./detectPackageManager.js"
+import { PackageDetails } from "./PackageDetails.js"
+import { join, resolve } from "./path.js"
 
 const repoSpecifier = /^([\w.-]+)\/([\w.-]+)$/
 const githubURL = /github.com(:|\/)([\w.-]+\/[\w.-]+?)(.git|\/.*)?$/

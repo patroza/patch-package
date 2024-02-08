@@ -1,7 +1,7 @@
-import { packageIsDevDependency } from "./packageIsDevDependency"
-import { join } from "./path"
+import { packageIsDevDependency } from "./packageIsDevDependency.js"
+import { join } from "./path.js"
 import { normalize } from "path"
-import { getPackageDetailsFromPatchFilename } from "./PackageDetails"
+import { getPackageDetailsFromPatchFilename } from "./PackageDetails.js"
 import { existsSync } from "fs"
 
 const appPath = normalize(join(__dirname, "../"))

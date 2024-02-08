@@ -1,4 +1,4 @@
-import { resolve } from "./path"
+import { resolve } from "./path.js"
 
 function transformVersionString(version: string, appRootPath: string) {
   if (version.startsWith("file:") && version[5] !== "/") {

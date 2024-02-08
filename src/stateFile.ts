@@ -1,8 +1,8 @@
 import { existsSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import { join } from "path"
-import { PackageDetails } from "./PackageDetails"
+import { PackageDetails } from "./PackageDetails.js"
 import stringify from "json-stable-stringify"
-import { hashFile } from "./hash"
+import { hashFile } from "./hash.js"
 import chalk from "chalk"
 export interface PatchState {
   patchFilename: string

@@ -4,8 +4,8 @@ import {
   Hunk,
   HunkHeader,
   verifyHunkIntegrity,
-} from "./parse"
-import { assertNever } from "../assertNever"
+} from "./parse.js"
+import { assertNever } from "../assertNever.js"
 
 function reverseHunk(hunk: Hunk): Hunk {
   const header: HunkHeader = {

@@ -1,4 +1,4 @@
-import { resolveRelativeFileDependencies } from "./resolveRelativeFileDependencies"
+import { resolveRelativeFileDependencies } from "./resolveRelativeFileDependencies.js"
 
 describe("resolveRelativeFileDependencies", () => {
   it("works for package.json", () => {

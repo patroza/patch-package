@@ -1,4 +1,4 @@
-import { assertNever } from "../assertNever"
+import { assertNever } from "../assertNever.js"
 
 export interface HunkHeader {
   original: {

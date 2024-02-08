@@ -1,4 +1,4 @@
-import { join } from "./path"
+import { join } from "./path.js"
 
 export interface PackageDetails {
   humanReadablePathSpecifier: string

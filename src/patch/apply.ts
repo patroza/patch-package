@@ -1,7 +1,7 @@
 import fs from "fs-extra"
 import { dirname, join, relative, resolve } from "path"
-import { ParsedPatchFile, FilePatch, Hunk } from "./parse"
-import { assertNever } from "../assertNever"
+import { ParsedPatchFile, FilePatch, Hunk } from "./parse.js"
+import { assertNever } from "../assertNever.js"
 
 export const executeEffects = (
   effects: ParsedPatchFile,

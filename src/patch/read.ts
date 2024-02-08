@@ -1,9 +1,9 @@
 import chalk from "chalk"
 import { readFileSync } from "fs-extra"
-import { relative, resolve } from "../path"
+import { relative, resolve } from "../path.js"
 import { normalize } from "path"
-import { PackageDetails } from "../PackageDetails"
-import { parsePatchFile, PatchFilePart } from "./parse"
+import { PackageDetails } from "../PackageDetails.js"
+import { parsePatchFile, PatchFilePart } from "./parse.js"
 
 export function readPatch({
   patchFilePath,

@@ -1,6 +1,6 @@
 // tslint:disable
 
-import { parsePatchFile } from "../patch/parse"
+import { parsePatchFile } from "../patch/parse.js"
 
 const patch = `diff --git a/banana.ts b/banana.ts
 index 2de83dd..842652c 100644

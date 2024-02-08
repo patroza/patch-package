@@ -1,5 +1,5 @@
 import fs from "fs-extra"
-import { join } from "./path"
+import { join } from "./path.js"
 import chalk from "chalk"
 import process from "process"
 import findWorkspaceRoot from "find-yarn-workspace-root"

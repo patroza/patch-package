@@ -3,21 +3,21 @@ import { writeFileSync } from "fs"
 import { existsSync } from "fs-extra"
 import { posix } from "path"
 import semver from "semver"
-import { hashFile } from "./hash"
-import { logPatchSequenceError } from "./makePatch"
-import { PackageDetails, PatchedPackageDetails } from "./PackageDetails"
-import { packageIsDevDependency } from "./packageIsDevDependency"
-import { executeEffects } from "./patch/apply"
-import { readPatch } from "./patch/read"
-import { reversePatch } from "./patch/reverse"
-import { getGroupedPatches } from "./patchFs"
-import { join, relative } from "./path"
+import { hashFile } from "./hash.js"
+import { logPatchSequenceError } from "./makePatch.js"
+import { PackageDetails, PatchedPackageDetails } from "./PackageDetails.js"
+import { packageIsDevDependency } from "./packageIsDevDependency.js"
+import { executeEffects } from "./patch/apply.js"
+import { readPatch } from "./patch/read.js"
+import { reversePatch } from "./patch/reverse.js"
+import { getGroupedPatches } from "./patchFs.js"
+import { join, relative } from "./path.js"
 import {
   clearPatchApplicationState,
   getPatchApplicationState,
   PatchState,
   savePatchApplicationState,
-} from "./stateFile"
+} from "./stateFile.js"
 
 class PatchApplicationError extends Error {
   constructor(msg: string) {

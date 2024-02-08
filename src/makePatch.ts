@@ -12,28 +12,28 @@ import {
 import { sync as rimraf } from "rimraf"
 import { dirSync } from "tmp"
 import { gzipSync } from "zlib"
-import { applyPatch } from "./applyPatches"
+import { applyPatch } from "./applyPatches.js"
 import {
   getPackageVCSDetails,
   maybePrintIssueCreationPrompt,
   openIssueCreationLink,
   shouldRecommendIssue,
-} from "./createIssue"
-import { PackageManager } from "./detectPackageManager"
-import { removeIgnoredFiles } from "./filterFiles"
-import { getPackageResolution } from "./getPackageResolution"
-import { getPackageVersion } from "./getPackageVersion"
-import { hashFile } from "./hash"
+} from "./createIssue.js"
+import { PackageManager } from "./detectPackageManager.js"
+import { removeIgnoredFiles } from "./filterFiles.js"
+import { getPackageResolution } from "./getPackageResolution.js"
+import { getPackageVersion } from "./getPackageVersion.js"
+import { hashFile } from "./hash.js"
 import {
   getPatchDetailsFromCliString,
   PackageDetails,
   PatchedPackageDetails,
-} from "./PackageDetails"
-import { parsePatchFile } from "./patch/parse"
-import { getGroupedPatches } from "./patchFs"
-import { dirname, join, resolve } from "./path"
-import { resolveRelativeFileDependencies } from "./resolveRelativeFileDependencies"
-import { spawnSafeSync } from "./spawnSafe"
+} from "./PackageDetails.js"
+import { parsePatchFile } from "./patch/parse.js"
+import { getGroupedPatches } from "./patchFs.js"
+import { dirname, join, resolve } from "./path.js"
+import { resolveRelativeFileDependencies } from "./resolveRelativeFileDependencies.js"
+import { spawnSafeSync } from "./spawnSafe.js"
 import {
   clearPatchApplicationState,
   getPatchApplicationState,
@@ -41,7 +41,7 @@ import {
   savePatchApplicationState,
   STATE_FILE_NAME,
   verifyAppliedPatches,
-} from "./stateFile"
+} from "./stateFile.js"
 
 function printNoPackageFoundError(
   packageName: string,
@@ -337,7 +337,7 @@ export function makePatch({
 
     try {
       parsePatchFile(diffResult.stdout.toString())
-    } catch (e) {
+    } catch (e: any) {
       if (
         (e as Error).message.includes("Unexpected file mode string: 120000")
       ) {

@@ -1,4 +1,4 @@
-import { join, resolve } from "./path"
+import { join, resolve } from "./path.js"
 import process from "process"
 import { existsSync } from "fs-extra"
 

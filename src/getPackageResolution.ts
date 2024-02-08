@@ -1,13 +1,13 @@
-import { join, resolve } from "./path"
-import { PackageDetails, getPatchDetailsFromCliString } from "./PackageDetails"
-import { PackageManager, detectPackageManager } from "./detectPackageManager"
+import { join, resolve } from "./path.js"
+import { PackageDetails, getPatchDetailsFromCliString } from "./PackageDetails.js"
+import { PackageManager, detectPackageManager } from "./detectPackageManager.js"
 import { readFileSync, existsSync } from "fs-extra"
 import { parse as parseYarnLockFile } from "@yarnpkg/lockfile"
 import yaml from "yaml"
 import findWorkspaceRoot from "find-yarn-workspace-root"
-import { getPackageVersion } from "./getPackageVersion"
-import { coerceSemVer } from "./coerceSemVer"
-import { parseBunLockfile } from "./parseBunLockfile"
+import { getPackageVersion } from "./getPackageVersion.js"
+import { coerceSemVer } from "./coerceSemVer.js"
+import { parseBunLockfile } from "./parseBunLockfile.js"
 
 export function getPackageResolution({
   packageDetails,

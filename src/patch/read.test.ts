@@ -1,5 +1,5 @@
-import { readPatch } from "./read"
-import { getPackageDetailsFromPatchFilename } from "../PackageDetails"
+import { readPatch } from "./read.js"
+import { getPackageDetailsFromPatchFilename } from "../PackageDetails.js"
 
 const removeAnsiCodes = (s: string) =>
   s.replace(

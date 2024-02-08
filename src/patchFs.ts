@@ -1,8 +1,8 @@
 import {
   PatchedPackageDetails,
   getPackageDetailsFromPatchFilename,
-} from "./PackageDetails"
-import { relative } from "./path"
+} from "./PackageDetails.js"
+import { relative } from "./path.js"
 import klawSync from "klaw-sync"
 
 export const getPatchFiles = (patchesDir: string) => {
